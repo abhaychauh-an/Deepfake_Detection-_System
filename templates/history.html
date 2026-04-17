@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background: #121212;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #444;
+}
+
+th {
+    background: #00adb5;
+}
+
+tr:nth-child(even) {
+    background: #1f1f1f;
+}
+</style>
+</head>
+
+<body>
+
+<h2>📊 Detection History</h2>
+
+<table>
+<tr>
+<th>ID</th>
+<th>Image</th>
+<th>Result</th>
+<th>Confidence</th>
+<th>Date</th>
+</tr>
+
+{% for i in data %}
+<tr>
+<td>{{ i[0] }}</td>
+<td>{{ i[1] }}</td>
+<td>{{ i[2] }}</td>
+<td>{{ i[3] }}%</td>
+<td>{{ i[4] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<br>
+<a href="/" style="color:#00adb5;">⬅ Back</a>
+
+</body>
+</html>
